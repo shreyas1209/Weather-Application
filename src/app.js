@@ -62,7 +62,7 @@ app.get('/weather',(req,res)=>{
                     return res.send({
                         forecast:(description+' weather at '+location+'. Current Temperature is ' +currentTemp+' degrees celsius.'+' Feels Like '+feelsLike+' degrees celsius.'),
                         location,
-                        address})
+                        address});
                 }
             })
     
