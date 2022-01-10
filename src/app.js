@@ -56,12 +56,12 @@ app.get('/weather',(req,res)=>{
         if(err){
             return res.send({err})
         }else{
-            forecast(latitude,longitude,(err,{description,currentTemp,feelsLike})=>{
+            forecast(latitude,longitude,(err,{description,currentTemp,feelsLike,humidity})=>{
                 if(err){
                     return res.send({err})
                 }else{
                     return res.send({
-                        forecast:(description+' weather at '+location+'. Current Temperature is ' +currentTemp+' degrees celsius.'+' Feels Like '+feelsLike+' degrees celsius.'),
+                        forecast:(description+' weather at '+location+'. Current Temperature is ' +currentTemp+' degrees celsius.'+' Feels Like '+feelsLike+' degrees celsius.The humidity out there is '+humidity+'%'),
                         location,
                         address});
                 }
